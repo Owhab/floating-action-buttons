@@ -114,9 +114,15 @@ function fab_render_button_fields( $button, $i ) {
         <button type="button" class="fab-remove dashicons dashicons-trash" title="<?php esc_attr_e('Remove','floating-action-buttons');?>"></button>
         <div class="fab-fields-row">
             <div>
-                <label><?php esc_html_e('FontAwesome Icon Class', 'floating-action-buttons'); ?></label>
-                <input type="text" name="fab_settings[buttons][<?php echo esc_attr($i); ?>][icon]" class="fab-icon-input" value="<?php echo $icon; ?>" placeholder="fas fa-phone" />
-                <span class="fab-icon-preview"><i class="<?php echo $icon; ?>"></i></span>
+                <label><?php esc_html_e('FontAwesome Icon', 'floating-action-buttons'); ?></label>
+                <div class="fab-icon-picker-container">
+                    <div class="fab-icon-input-wrapper">
+                        <input type="text" name="fab_settings[buttons][<?php echo esc_attr($i); ?>][icon]" class="fab-icon-input" value="<?php echo $icon; ?>" placeholder="<?php esc_attr_e('Use picker or enter class like: fas fa-phone', 'floating-action-buttons'); ?>" />
+                    </div>
+                    <button type="button" class="fab-icon-picker-btn" title="<?php esc_attr_e('Choose from icon library', 'floating-action-buttons'); ?>"><?php esc_html_e('Choose Icon', 'floating-action-buttons'); ?></button>
+                    <span class="fab-icon-preview"><i class="<?php echo $icon; ?>"></i></span>
+                </div>
+                <small style="color: #666; font-style: italic;"><?php esc_html_e('Click "Choose Icon" for visual selection or manually enter Font Awesome class', 'floating-action-buttons'); ?></small>
             </div>
             <div>
                 <label><?php esc_html_e('Label', 'floating-action-buttons'); ?></label>
